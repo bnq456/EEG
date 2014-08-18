@@ -1,0 +1,12 @@
+#ifndef EEGREADER_GLOBAL_H
+#define EEGREADER_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(EEGREADER_LIBRARY)
+#  define EEGREADERSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define EEGREADERSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // EEGREADER_GLOBAL_H
