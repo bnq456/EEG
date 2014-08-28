@@ -31,6 +31,8 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QAction *actionNew;
+    QAction *actionOpen;
     QWidget *centralWidget;
     QGridLayout *gridLayout_4;
     QGroupBox *groupBox_2;
@@ -38,6 +40,8 @@ public:
     QTreeView *treeView;
     QVBoxLayout *verticalLayout;
     QGroupBox *groupBox_4;
+    QGridLayout *gridLayout_5;
+    QCustomPlot *widget;
     QGroupBox *groupBox;
     QGridLayout *gridLayout_2;
     QFrame *frame_2;
@@ -53,6 +57,10 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(962, 590);
+        actionNew = new QAction(MainWindow);
+        actionNew->setObjectName(QStringLiteral("actionNew"));
+        actionOpen = new QAction(MainWindow);
+        actionOpen->setObjectName(QStringLiteral("actionOpen"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         gridLayout_4 = new QGridLayout(centralWidget);
@@ -86,6 +94,15 @@ public:
         groupBox_4 = new QGroupBox(centralWidget);
         groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
         groupBox_4->setMinimumSize(QSize(0, 100));
+        gridLayout_5 = new QGridLayout(groupBox_4);
+        gridLayout_5->setSpacing(6);
+        gridLayout_5->setContentsMargins(11, 11, 11, 11);
+        gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
+        widget = new QCustomPlot(groupBox_4);
+        widget->setObjectName(QStringLiteral("widget"));
+
+        gridLayout_5->addWidget(widget, 0, 0, 1, 1);
+
 
         verticalLayout->addWidget(groupBox_4);
 
@@ -136,11 +153,6 @@ public:
         gridLayout_4->addWidget(groupBox_3, 0, 2, 2, 1);
 
         MainWindow->setCentralWidget(centralWidget);
-        customPlot->raise();
-        groupBox->raise();
-        groupBox_2->raise();
-        groupBox_3->raise();
-        groupBox_4->raise();
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 962, 23));
@@ -152,6 +164,8 @@ public:
         MainWindow->setStatusBar(statusBar);
 
         menuBar->addAction(menuFile->menuAction());
+        menuFile->addAction(actionNew);
+        menuFile->addAction(actionOpen);
 
         retranslateUi(MainWindow);
 
@@ -161,6 +175,8 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "QCustomPlot Interaction Example", 0));
+        actionNew->setText(QApplication::translate("MainWindow", "New", 0));
+        actionOpen->setText(QApplication::translate("MainWindow", "Open", 0));
         groupBox_2->setTitle(QString());
         groupBox_4->setTitle(QString());
         groupBox->setTitle(QString());

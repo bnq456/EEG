@@ -35,7 +35,7 @@ private slots:
 private:
   Ui::MainWindow *ui;
 
-  EEGReader a;
+
 };
 
 #endif // MAINWINDOW_H

@@ -5,6 +5,8 @@ MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent),
   ui(new Ui::MainWindow)
 {
+
+
   srand(QDateTime::currentDateTime().toTime_t());
   ui->setupUi(this);
   
@@ -12,13 +14,14 @@ MainWindow::MainWindow(QWidget *parent) :
                                   QCP::iSelectLegend | QCP::iSelectPlottables);
   ui->customPlot->xAxis->setRange(-8, 8);
   ui->customPlot->yAxis->setRange(-5, 5);
+  //ui->customPlot->axisRect()->addAxis(QCPAxis::atRight);
   ui->customPlot->axisRect()->setupFullAxesBox();
   
   ui->customPlot->plotLayout()->insertRow(0);
-  ui->customPlot->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->customPlot, "Interaction Example"));
-  
+  ui->customPlot->plotLayout()->addElement(0, 0, new QCPPlotTitle(ui->customPlot, "^0^ Example ^0^"));
   ui->customPlot->xAxis->setLabel("x Axis");
   ui->customPlot->yAxis->setLabel("y Axis");
+
   ui->customPlot->legend->setVisible(true);
   QFont legendFont = font();
   legendFont.setPointSize(10);
@@ -27,9 +30,9 @@ MainWindow::MainWindow(QWidget *parent) :
   ui->customPlot->legend->setSelectableParts(QCPLegend::spItems); // legend box shall not be selectable, only legend items
   
   addRandomGraph();
-  addRandomGraph();
-  addRandomGraph();
-  addRandomGraph();
+  //addRandomGraph();
+  //addRandomGraph();
+  //addRandomGraph();
   
   // connect slot that ties some axis selections together (especially opposite axes):
   connect(ui->customPlot, SIGNAL(selectionChangedByUser()), this, SLOT(selectionChanged()));
