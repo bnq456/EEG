@@ -1,5 +1,5 @@
 #include <QApplication>
-#include "mainwindow.h"
+#include "EG_Mainwindow.h"
 
 int main(int argc, char *argv[])
 {

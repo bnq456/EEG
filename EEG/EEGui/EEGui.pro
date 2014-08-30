@@ -16,11 +16,20 @@ DEPENDPATH += .
 LIBS += ../bin/libEEGReader0.a
 LIBS += ../bin/libCPlotLibd1.a
 
-SOURCES += main.cpp\
-        mainwindow.cpp
+SOURCES += main.cpp \
+    EG_Mainwindow.cpp \
+    EG_Datastruct.cpp \
+    EG_Dataprocess.cpp \
+    EG_Headerprocess.cpp
 
-HEADERS  += mainwindow.h
-FORMS    += mainwindow.ui
+HEADERS  += \
+    EG_Mainwindow.h \
+    EG_Datastruct.h \
+    EG_Dataprocess.h \
+    EG_Global.h \
+    EG_Headerprocess.h
+FORMS    += \
+    EG_Mainwindow.ui
 
 MOC_DIR = tmp/moc
 RCC_DIR = tmp/rcc
