@@ -25,7 +25,6 @@ DEL_DIR       = rmdir
 MOVE          = move
 SUBTARGETS    =  \
 		sub-CPlotLib \
-		sub-EEGReader \
 		sub-EEGui
 
 
@@ -72,87 +71,44 @@ sub-CPlotLib-uninstall_subtargets-ordered: FORCE
 sub-CPlotLib-uninstall_subtargets: FORCE
 	@if not exist CPlotLib\ mkdir CPlotLib\ & if not exist CPlotLib\ exit 1
 	cd CPlotLib\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\CPlotLib\CPlotLib.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile uninstall
-sub-EEGReader-qmake_all: sub-CPlotLib-qmake_all FORCE
-	@if not exist EEGReader\ mkdir EEGReader\ & if not exist EEGReader\ exit 1
-	cd EEGReader\ && $(QMAKE) C:\EEG\EEG\EEGReader\EEGReader.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile
-	cd EEGReader\ && $(MAKE) -f Makefile qmake_all
-sub-EEGReader: FORCE
-	@if not exist EEGReader\ mkdir EEGReader\ & if not exist EEGReader\ exit 1
-	cd EEGReader\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGReader\EEGReader.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile
-sub-EEGReader-make_first-ordered: sub-CPlotLib-make_first-ordered  FORCE
-	@if not exist EEGReader\ mkdir EEGReader\ & if not exist EEGReader\ exit 1
-	cd EEGReader\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGReader\EEGReader.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile 
-sub-EEGReader-make_first: FORCE
-	@if not exist EEGReader\ mkdir EEGReader\ & if not exist EEGReader\ exit 1
-	cd EEGReader\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGReader\EEGReader.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile 
-sub-EEGReader-all-ordered: sub-CPlotLib-all-ordered  FORCE
-	@if not exist EEGReader\ mkdir EEGReader\ & if not exist EEGReader\ exit 1
-	cd EEGReader\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGReader\EEGReader.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile all
-sub-EEGReader-all: FORCE
-	@if not exist EEGReader\ mkdir EEGReader\ & if not exist EEGReader\ exit 1
-	cd EEGReader\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGReader\EEGReader.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile all
-sub-EEGReader-clean-ordered: sub-CPlotLib-clean-ordered  FORCE
-	@if not exist EEGReader\ mkdir EEGReader\ & if not exist EEGReader\ exit 1
-	cd EEGReader\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGReader\EEGReader.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile clean
-sub-EEGReader-clean: FORCE
-	@if not exist EEGReader\ mkdir EEGReader\ & if not exist EEGReader\ exit 1
-	cd EEGReader\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGReader\EEGReader.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile clean
-sub-EEGReader-distclean-ordered: sub-CPlotLib-distclean-ordered  FORCE
-	@if not exist EEGReader\ mkdir EEGReader\ & if not exist EEGReader\ exit 1
-	cd EEGReader\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGReader\EEGReader.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile distclean
-sub-EEGReader-distclean: FORCE
-	@if not exist EEGReader\ mkdir EEGReader\ & if not exist EEGReader\ exit 1
-	cd EEGReader\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGReader\EEGReader.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile distclean
-sub-EEGReader-install_subtargets-ordered: sub-CPlotLib-install_subtargets-ordered  FORCE
-	@if not exist EEGReader\ mkdir EEGReader\ & if not exist EEGReader\ exit 1
-	cd EEGReader\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGReader\EEGReader.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile install
-sub-EEGReader-install_subtargets: FORCE
-	@if not exist EEGReader\ mkdir EEGReader\ & if not exist EEGReader\ exit 1
-	cd EEGReader\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGReader\EEGReader.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile install
-sub-EEGReader-uninstall_subtargets-ordered: sub-CPlotLib-uninstall_subtargets-ordered  FORCE
-	@if not exist EEGReader\ mkdir EEGReader\ & if not exist EEGReader\ exit 1
-	cd EEGReader\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGReader\EEGReader.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile uninstall
-sub-EEGReader-uninstall_subtargets: FORCE
-	@if not exist EEGReader\ mkdir EEGReader\ & if not exist EEGReader\ exit 1
-	cd EEGReader\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGReader\EEGReader.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile uninstall
-sub-EEGui-qmake_all: sub-EEGReader-qmake_all FORCE
+sub-EEGui-qmake_all: sub-CPlotLib-qmake_all FORCE
 	@if not exist EEGui\ mkdir EEGui\ & if not exist EEGui\ exit 1
 	cd EEGui\ && $(QMAKE) C:\EEG\EEG\EEGui\EEGui.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile
 	cd EEGui\ && $(MAKE) -f Makefile qmake_all
 sub-EEGui: FORCE
 	@if not exist EEGui\ mkdir EEGui\ & if not exist EEGui\ exit 1
 	cd EEGui\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGui\EEGui.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile
-sub-EEGui-make_first-ordered: sub-EEGReader-make_first-ordered  FORCE
+sub-EEGui-make_first-ordered: sub-CPlotLib-make_first-ordered  FORCE
 	@if not exist EEGui\ mkdir EEGui\ & if not exist EEGui\ exit 1
 	cd EEGui\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGui\EEGui.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile 
 sub-EEGui-make_first: FORCE
 	@if not exist EEGui\ mkdir EEGui\ & if not exist EEGui\ exit 1
 	cd EEGui\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGui\EEGui.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile 
-sub-EEGui-all-ordered: sub-EEGReader-all-ordered  FORCE
+sub-EEGui-all-ordered: sub-CPlotLib-all-ordered  FORCE
 	@if not exist EEGui\ mkdir EEGui\ & if not exist EEGui\ exit 1
 	cd EEGui\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGui\EEGui.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile all
 sub-EEGui-all: FORCE
 	@if not exist EEGui\ mkdir EEGui\ & if not exist EEGui\ exit 1
 	cd EEGui\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGui\EEGui.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile all
-sub-EEGui-clean-ordered: sub-EEGReader-clean-ordered  FORCE
+sub-EEGui-clean-ordered: sub-CPlotLib-clean-ordered  FORCE
 	@if not exist EEGui\ mkdir EEGui\ & if not exist EEGui\ exit 1
 	cd EEGui\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGui\EEGui.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile clean
 sub-EEGui-clean: FORCE
 	@if not exist EEGui\ mkdir EEGui\ & if not exist EEGui\ exit 1
 	cd EEGui\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGui\EEGui.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile clean
-sub-EEGui-distclean-ordered: sub-EEGReader-distclean-ordered  FORCE
+sub-EEGui-distclean-ordered: sub-CPlotLib-distclean-ordered  FORCE
 	@if not exist EEGui\ mkdir EEGui\ & if not exist EEGui\ exit 1
 	cd EEGui\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGui\EEGui.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile distclean
 sub-EEGui-distclean: FORCE
 	@if not exist EEGui\ mkdir EEGui\ & if not exist EEGui\ exit 1
 	cd EEGui\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGui\EEGui.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile distclean
-sub-EEGui-install_subtargets-ordered: sub-EEGReader-install_subtargets-ordered  FORCE
+sub-EEGui-install_subtargets-ordered: sub-CPlotLib-install_subtargets-ordered  FORCE
 	@if not exist EEGui\ mkdir EEGui\ & if not exist EEGui\ exit 1
 	cd EEGui\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGui\EEGui.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile install
 sub-EEGui-install_subtargets: FORCE
 	@if not exist EEGui\ mkdir EEGui\ & if not exist EEGui\ exit 1
 	cd EEGui\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGui\EEGui.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile install
-sub-EEGui-uninstall_subtargets-ordered: sub-EEGReader-uninstall_subtargets-ordered  FORCE
+sub-EEGui-uninstall_subtargets-ordered: sub-CPlotLib-uninstall_subtargets-ordered  FORCE
 	@if not exist EEGui\ mkdir EEGui\ & if not exist EEGui\ exit 1
 	cd EEGui\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGui\EEGui.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile uninstall
 sub-EEGui-uninstall_subtargets: FORCE
@@ -367,48 +323,39 @@ Makefile: ../EEG/EEG.pro ../../Qt/Qt5.2.1Mingw/5.2.1/mingw48_32/mkspecs/win32-g+
 qmake: FORCE
 	@$(QMAKE) -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ..\EEG\EEG.pro
 
-qmake_all: sub-CPlotLib-qmake_all sub-EEGReader-qmake_all sub-EEGui-qmake_all FORCE
+qmake_all: sub-CPlotLib-qmake_all sub-EEGui-qmake_all FORCE
 
-make_first: sub-CPlotLib-make_first-ordered sub-EEGReader-make_first-ordered sub-EEGui-make_first-ordered FORCE
-all: sub-CPlotLib-all-ordered sub-EEGReader-all-ordered sub-EEGui-all-ordered FORCE
-clean: sub-CPlotLib-clean-ordered sub-EEGReader-clean-ordered sub-EEGui-clean-ordered FORCE
-distclean: sub-CPlotLib-distclean-ordered sub-EEGReader-distclean-ordered sub-EEGui-distclean-ordered FORCE
+make_first: sub-CPlotLib-make_first-ordered sub-EEGui-make_first-ordered FORCE
+all: sub-CPlotLib-all-ordered sub-EEGui-all-ordered FORCE
+clean: sub-CPlotLib-clean-ordered sub-EEGui-clean-ordered FORCE
+distclean: sub-CPlotLib-distclean-ordered sub-EEGui-distclean-ordered FORCE
 	-$(DEL_FILE) Makefile
-install_subtargets: sub-CPlotLib-install_subtargets-ordered sub-EEGReader-install_subtargets-ordered sub-EEGui-install_subtargets-ordered FORCE
-uninstall_subtargets: sub-CPlotLib-uninstall_subtargets-ordered sub-EEGReader-uninstall_subtargets-ordered sub-EEGui-uninstall_subtargets-ordered FORCE
+install_subtargets: sub-CPlotLib-install_subtargets-ordered sub-EEGui-install_subtargets-ordered FORCE
+uninstall_subtargets: sub-CPlotLib-uninstall_subtargets-ordered sub-EEGui-uninstall_subtargets-ordered FORCE
 
 sub-CPlotLib-debug_ordered:
 	@if not exist CPlotLib\ mkdir CPlotLib\ & if not exist CPlotLib\ exit 1
 	cd CPlotLib\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\CPlotLib\CPlotLib.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile debug
-sub-EEGReader-debug_ordered: sub-CPlotLib-debug_ordered 
-	@if not exist EEGReader\ mkdir EEGReader\ & if not exist EEGReader\ exit 1
-	cd EEGReader\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGReader\EEGReader.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile debug
-sub-EEGui-debug_ordered: sub-EEGReader-debug_ordered 
+sub-EEGui-debug_ordered: sub-CPlotLib-debug_ordered 
 	@if not exist EEGui\ mkdir EEGui\ & if not exist EEGui\ exit 1
 	cd EEGui\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGui\EEGui.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile debug
-debug: sub-CPlotLib-debug_ordered sub-EEGReader-debug_ordered sub-EEGui-debug_ordered
+debug: sub-CPlotLib-debug_ordered sub-EEGui-debug_ordered
 
 sub-CPlotLib-release_ordered:
 	@if not exist CPlotLib\ mkdir CPlotLib\ & if not exist CPlotLib\ exit 1
 	cd CPlotLib\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\CPlotLib\CPlotLib.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile release
-sub-EEGReader-release_ordered: sub-CPlotLib-release_ordered 
-	@if not exist EEGReader\ mkdir EEGReader\ & if not exist EEGReader\ exit 1
-	cd EEGReader\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGReader\EEGReader.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile release
-sub-EEGui-release_ordered: sub-EEGReader-release_ordered 
+sub-EEGui-release_ordered: sub-CPlotLib-release_ordered 
 	@if not exist EEGui\ mkdir EEGui\ & if not exist EEGui\ exit 1
 	cd EEGui\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGui\EEGui.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile release
-release: sub-CPlotLib-release_ordered sub-EEGReader-release_ordered sub-EEGui-release_ordered
+release: sub-CPlotLib-release_ordered sub-EEGui-release_ordered
 
 sub-CPlotLib-check_ordered:
 	@if not exist CPlotLib\ mkdir CPlotLib\ & if not exist CPlotLib\ exit 1
 	cd CPlotLib\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\CPlotLib\CPlotLib.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile check
-sub-EEGReader-check_ordered: sub-CPlotLib-check_ordered 
-	@if not exist EEGReader\ mkdir EEGReader\ & if not exist EEGReader\ exit 1
-	cd EEGReader\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGReader\EEGReader.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile check
-sub-EEGui-check_ordered: sub-EEGReader-check_ordered 
+sub-EEGui-check_ordered: sub-CPlotLib-check_ordered 
 	@if not exist EEGui\ mkdir EEGui\ & if not exist EEGui\ exit 1
 	cd EEGui\ && ( if not exist Makefile $(QMAKE) C:\EEG\EEG\EEGui\EEGui.pro -spec win32-g++ CONFIG+=debug CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile ) && $(MAKE) -f Makefile check
-check: sub-CPlotLib-check_ordered sub-EEGReader-check_ordered sub-EEGui-check_ordered
+check: sub-CPlotLib-check_ordered sub-EEGui-check_ordered
 install: install_subtargets  FORCE
 
 uninstall:  uninstall_subtargets FORCE

@@ -1,5 +1,5 @@
 TEMPLATE = subdirs
 
-SUBDIRS = CPlotLib EEGReader EEGui
-
+SUBDIRS = CPlotLib  EEGui
+# EEGReader
 CONFIG += ordered

@@ -13,21 +13,23 @@ DESTDIR = ../bin
 
 INCLUDEPATH += . ../include
 DEPENDPATH += .
-LIBS += ../bin/libEEGReader0.a
+# LIBS += ../bin/libEEGReader0.a
 LIBS += ../bin/libCPlotLibd1.a
 
 SOURCES += main.cpp \
     EG_Mainwindow.cpp \
     EG_Datastruct.cpp \
     EG_Dataprocess.cpp \
-    EG_Headerprocess.cpp
+    EG_Headerprocess.cpp \
+    EG_Datamanager.cpp
 
 HEADERS  += \
     EG_Mainwindow.h \
     EG_Datastruct.h \
     EG_Dataprocess.h \
     EG_Global.h \
-    EG_Headerprocess.h
+    EG_Headerprocess.h \
+    EG_Datamanager.h
 FORMS    += \
     EG_Mainwindow.ui
 

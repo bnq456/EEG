@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QInputDialog>
 #include "qcustomplot.h"
-#include "eegreader.h"
+
 #include "EG_Dataprocess.h"
 #include "EG_Headerprocess.h"
 
