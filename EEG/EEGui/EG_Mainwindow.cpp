@@ -84,6 +84,12 @@ MainWindow::MainWindow(QWidget *parent) :
 
 //    delete []data;
 
+    QStringList flist;
+    flist.append("F://EGGDATA//10-04-sleep-chengjian_New Reference.vhdr");
+    flist.append("F://EGGDATA//10-04-sleep-chengjian_New Reference.vmrk");
+    HeaderProcess hp(flist);
+
+    int aaa =100;
 
 
 }

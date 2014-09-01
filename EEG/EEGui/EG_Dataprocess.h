@@ -5,7 +5,7 @@
 #include "EG_Datastruct.h"
 #include "EG_Headerprocess.h"
 
-class DataProcess : public DataStruct
+class DataProcess
 {
 public:
     DataProcess(const QStringList& filelist);

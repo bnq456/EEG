@@ -6,6 +6,7 @@
 #include "qcustomplot.h"
 #include "eegreader.h"
 #include "EG_Dataprocess.h"
+#include "EG_Headerprocess.h"
 
 namespace Ui {
 class MainWindow;
